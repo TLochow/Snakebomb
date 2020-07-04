@@ -10,7 +10,7 @@ onready var FreeCast = $FreeCast
 var Exploded = false
 
 func _ready():
-	FirstSprite = true
+	FirstSprite = randi() % 2 == 0
 	
 	var direction = randi() % 4
 	MovingHorizontal = direction % 2 == 0

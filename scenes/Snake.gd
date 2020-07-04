@@ -17,7 +17,7 @@ onready var SnakeBodies = get_node(BodiesPath)
 export(NodePath) var ExplosionPath
 onready var Explosions = get_node(ExplosionPath)
 
-var MouthOpen = true
+var MouthOpen = false
 
 func _ready():
 	Direction = Global.DirRight
@@ -38,6 +38,7 @@ func _process(delta):
 	if not Global.Exploded:
 		if CherrySensor.get_overlapping_bodies().size() > 0:
 			Global.SnakeLength += 1
+			$Pickup.play()
 			emit_signal("AteCherry")
 		
 		ChangeDirection()
@@ -48,6 +49,7 @@ func _process(delta):
 			pos += Direction * 8
 			set_position(pos)
 			PreviousDirection = Direction
+			$Move.play()
 		else:
 			Explode()
 		

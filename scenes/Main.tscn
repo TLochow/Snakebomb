@@ -1,0 +1,185 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Snake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/SnakeBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/cherry.png" type="Texture" id=6]
+[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 7 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 1, 29, 0, 1, 30, 0, 1, 31, 0, 1, 32, 0, 1, 33, 0, 1, 34, 0, 1, 35, 0, 2, 65536, 0, 65536, 65537, 0, 3, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 0, 131073, 65553, 0, 131073, 65554, 0, 131073, 65555, 0, 131073, 65556, 0, 131073, 65557, 0, 131073, 65558, 0, 131073, 65559, 0, 131073, 65560, 0, 131073, 65561, 0, 131073, 65562, 0, 131073, 65563, 0, 131073, 65564, 0, 131073, 65565, 0, 131073, 65566, 0, 131073, 65567, 0, 131073, 65568, 0, 131073, 65569, 0, 131073, 65570, 0, 4, 65571, 0, 65538, 131072, 0, 65536, 131073, 0, 65538, 131106, 0, 65536, 131107, 0, 65538, 196608, 0, 65536, 196609, 0, 65538, 196642, 0, 65536, 196643, 0, 65538, 262144, 0, 65536, 262145, 0, 65538, 262178, 0, 65536, 262179, 0, 65538, 327680, 0, 65536, 327681, 0, 65538, 327714, 0, 65536, 327715, 0, 65538, 393216, 0, 65536, 393217, 0, 65538, 393250, 0, 65536, 393251, 0, 65538, 458752, 0, 65536, 458753, 0, 65538, 458786, 0, 65536, 458787, 0, 65538, 524288, 0, 65536, 524289, 0, 65538, 524322, 0, 65536, 524323, 0, 65538, 589824, 0, 65536, 589825, 0, 65538, 589858, 0, 65536, 589859, 0, 65538, 655360, 0, 65536, 655361, 0, 65538, 655394, 0, 65536, 655395, 0, 65538, 720896, 0, 65536, 720897, 0, 65538, 720930, 0, 65536, 720931, 0, 65538, 786432, 0, 65536, 786433, 0, 65538, 786466, 0, 65536, 786467, 0, 65538, 851968, 0, 65536, 851969, 0, 65538, 852002, 0, 65536, 852003, 0, 65538, 917504, 0, 65536, 917505, 0, 65538, 917538, 0, 65536, 917539, 0, 65538, 983040, 0, 65536, 983041, 0, 65538, 983074, 0, 65536, 983075, 0, 65538, 1048576, 0, 65536, 1048577, 0, 65538, 1048610, 0, 65536, 1048611, 0, 65538, 1114112, 0, 65536, 1114113, 0, 65538, 1114146, 0, 65536, 1114147, 0, 65538, 1179648, 0, 65536, 1179649, 0, 65538, 1179682, 0, 65536, 1179683, 0, 65538, 1245184, 0, 65536, 1245185, 0, 65538, 1245218, 0, 65536, 1245219, 0, 65538, 1310720, 0, 65536, 1310721, 0, 65538, 1310754, 0, 65536, 1310755, 0, 65538, 1376256, 0, 65536, 1376257, 0, 65538, 1376290, 0, 65536, 1376291, 0, 65538, 1441792, 0, 65536, 1441793, 0, 65538, 1441826, 0, 65536, 1441827, 0, 65538, 1507328, 0, 65536, 1507329, 0, 65538, 1507362, 0, 65536, 1507363, 0, 65538, 1572864, 0, 65536, 1572865, 0, 65538, 1572898, 0, 65536, 1572899, 0, 65538, 1638400, 0, 65536, 1638401, 0, 65538, 1638434, 0, 65536, 1638435, 0, 65538, 1703936, 0, 65536, 1703937, 0, 65538, 1703970, 0, 65536, 1703971, 0, 65538, 1769472, 0, 65536, 1769473, 0, 65538, 1769506, 0, 65536, 1769507, 0, 65538, 1835008, 0, 65536, 1835009, 0, 65538, 1835042, 0, 65536, 1835043, 0, 65538, 1900544, 0, 65536, 1900545, 0, 65538, 1900578, 0, 65536, 1900579, 0, 65538, 1966080, 0, 65536, 1966081, 0, 65538, 1966114, 0, 65536, 1966115, 0, 65538, 2031616, 0, 65536, 2031617, 0, 65538, 2031650, 0, 65536, 2031651, 0, 65538, 2097152, 0, 65536, 2097153, 0, 65538, 2097186, 0, 65536, 2097187, 0, 65538, 2162688, 0, 65536, 2162689, 0, 65538, 2162722, 0, 65536, 2162723, 0, 65538, 2228224, 0, 65536, 2228225, 0, 65539, 2228226, 0, 1, 2228227, 0, 1, 2228228, 0, 1, 2228229, 0, 1, 2228230, 0, 1, 2228231, 0, 1, 2228232, 0, 1, 2228233, 0, 1, 2228234, 0, 1, 2228235, 0, 1, 2228236, 0, 1, 2228237, 0, 1, 2228238, 0, 1, 2228239, 0, 1, 2228240, 0, 1, 2228241, 0, 1, 2228242, 0, 1, 2228243, 0, 1, 2228244, 0, 1, 2228245, 0, 1, 2228246, 0, 1, 2228247, 0, 1, 2228248, 0, 1, 2228249, 0, 1, 2228250, 0, 1, 2228251, 0, 1, 2228252, 0, 1, 2228253, 0, 1, 2228254, 0, 1, 2228255, 0, 1, 2228256, 0, 1, 2228257, 0, 1, 2228258, 0, 65540, 2228259, 0, 65538, 2293760, 0, 131072, 2293761, 0, 131073, 2293762, 0, 131073, 2293763, 0, 131073, 2293764, 0, 131073, 2293765, 0, 131073, 2293766, 0, 131073, 2293767, 0, 131073, 2293768, 0, 131073, 2293769, 0, 131073, 2293770, 0, 131073, 2293771, 0, 131073, 2293772, 0, 131073, 2293773, 0, 131073, 2293774, 0, 131073, 2293775, 0, 131073, 2293776, 0, 131073, 2293777, 0, 131073, 2293778, 0, 131073, 2293779, 0, 131073, 2293780, 0, 131073, 2293781, 0, 131073, 2293782, 0, 131073, 2293783, 0, 131073, 2293784, 0, 131073, 2293785, 0, 131073, 2293786, 0, 131073, 2293787, 0, 131073, 2293788, 0, 131073, 2293789, 0, 131073, 2293790, 0, 131073, 2293791, 0, 131073, 2293792, 0, 131073, 2293793, 0, 131073, 2293794, 0, 131073, 2293795, 0, 131074 )
+
+[node name="Snake" parent="." instance=ExtResource( 3 )]
+position = Vector2( 80, 112 )
+BodiesPath = NodePath("../SnakeBodies")
+ExplosionPath = NodePath("../Explosions")
+
+[node name="SnakeBodies" type="Node2D" parent="."]
+
+[node name="SnakeBody" parent="SnakeBodies" instance=ExtResource( 4 )]
+position = Vector2( 72, 112 )
+
+[node name="SnakeBody2" parent="SnakeBodies" instance=ExtResource( 4 )]
+position = Vector2( 64, 112 )
+
+[node name="Ghosts" type="Node2D" parent="."]
+
+[node name="Explosions" type="Node2D" parent="."]
+
+[node name="FreeCast" type="RayCast2D" parent="."]
+collision_mask = 1023
+
+[node name="Cherry" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cherry"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Cherry"]
+texture = ExtResource( 6 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Begin" type="Control" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Begin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="LevelLabel" type="Label" parent="UI/Begin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -144.0
+custom_fonts/font = SubResource( 2 )
+text = "Level"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeInAnimationPlayer" type="AnimationPlayer" parent="UI/Begin"]
+anims/FadeIn = SubResource( 3 )
+
+[node name="End" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/End"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="Win" type="Control" parent="UI/End"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/End/Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -136.0
+custom_fonts/font = SubResource( 4 )
+text = "Level won!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/End/Win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Press any key
+to proceed to
+the next level!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loose" type="Control" parent="UI/End"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/End/Loose"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -136.0
+custom_fonts/font = SubResource( 4 )
+text = "You lost!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/End/Loose"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Press any key
+to try again!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="AteCherry" from="Snake" to="." method="_on_Snake_AteCherry"]
+[connection signal="animation_finished" from="UI/Begin/FadeInAnimationPlayer" to="." method="_on_FadeInAnimationPlayer_animation_finished"]

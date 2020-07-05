@@ -25,15 +25,15 @@ font_data = ExtResource( 2 )
 size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 6
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 10
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 6
 font_data = ExtResource( 2 )
 
@@ -1585,7 +1585,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Main/Buttons/ShaderButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
 text = "Toggle Retro"
 align = 1
@@ -1611,7 +1611,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Main/Buttons/GlowButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
 text = "Toggle Glow"
 align = 1
@@ -1666,7 +1666,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 1"
 align = 1
@@ -1693,7 +1693,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 2"
 align = 1
@@ -1720,7 +1720,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 3"
 align = 1
@@ -1747,7 +1747,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 4"
 align = 1
@@ -1774,7 +1774,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level5"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 5"
 align = 1
@@ -1801,7 +1801,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level6"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 6"
 align = 1
@@ -1828,7 +1828,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level7"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 7"
 align = 1
@@ -1855,7 +1855,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level8"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 8"
 align = 1
@@ -1882,7 +1882,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level9"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 9"
 align = 1
@@ -1909,7 +1909,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level10"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 10"
 align = 1
@@ -1936,7 +1936,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Back"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
 text = "Back"
 align = 1
@@ -1972,7 +1972,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
 margin_bottom = -56.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
 text = "Use the Arrow keys, WASD, ZQSD or IJKL
 to change direction

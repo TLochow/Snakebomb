@@ -30,8 +30,8 @@ GlobalShader="*res://GlobalShader.tscn"
 
 window/size/width=288
 window/size/height=288
-window/size/test_width=864
-window/size/test_height=864
+window/size/test_width=576
+window/size/test_height=576
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

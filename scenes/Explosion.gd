@@ -1,6 +1,7 @@
 extends Area2D
 
 func _ready():
+	Global.ScreenShake = min(Global.ScreenShake + 2.0, 5.0)
 	$AnimationPlayer.play("Explosion")
 
 func ExplodeFurther():

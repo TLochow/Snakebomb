@@ -35,7 +35,7 @@ func _input(event):
 			DirectionChanges.append(Global.DirRight)
 
 func _process(delta):
-	if not Global.Exploded:
+	if not Global.Exploded and Global.Update:
 		if CherrySensor.get_overlapping_bodies().size() > 0:
 			Global.SnakeLength += 1
 			$Pickup.play()
@@ -97,7 +97,7 @@ func CheckFree():
 func Explode():
 	if not Global.Exploded:
 		Global.Exploded = true
-		Global.SetSnakeSpeed(0)
+		Global.SetSnakeSpeed(60.0)
 		var explosion = EXPLOSIONSCENE.instance()
 		explosion.set_position(get_position())
 		Explosions.add_child(explosion)

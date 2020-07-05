@@ -1,0 +1,364 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/End.gd" type="Script" id=2]
+[ext_resource path="res://sprites/snake.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="End" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -208.0
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -48.0
+custom_fonts/font = SubResource( 2 )
+text = "You have beaten all
+the levels!
+
+Thank you so much
+for playing!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 232.0
+custom_fonts/font = SubResource( 3 )
+text = "Press any key to return
+to the main menu."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprites" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 140, 236 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 19
+
+[node name="Sprite2" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 140, 228 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite3" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 132, 228 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite4" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 132, 220 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite5" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 124, 220 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite6" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 124, 212 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite7" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 116, 212 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite8" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 116, 204 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite9" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 108, 204 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite10" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 108, 196 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 9
+
+[node name="Sprite11" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 108, 188 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 9
+
+[node name="Sprite12" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 108, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite13" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 116, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite14" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 116, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite15" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 124, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite16" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 132, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite17" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 132, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite18" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 140, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite19" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 148, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite20" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 156, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite21" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 156, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite22" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 164, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite23" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 172, 172 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite24" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 172, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 11
+
+[node name="Sprite25" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 180 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite26" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 188 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 9
+
+[node name="Sprite27" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 196 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 9
+
+[node name="Sprite28" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 204 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite29" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 172, 204 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite30" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 172, 212 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite31" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 164, 212 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite32" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 164, 220 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite33" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 156, 220 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite34" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 156, 228 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite35" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 148, 228 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite36" type="Sprite" parent="Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 148, 236 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+frame = 3

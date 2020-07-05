@@ -7,13 +7,22 @@ onready var Explosions = $Explosions
 onready var Ghosts = $Ghosts
 onready var Map = $TileMap
 
+var UpdateCounter = 0
+
 var Begun = false
 var LevelEnd = false
 var Won = false
 
 var SpawnableArea = Vector2(272, 272)
 
+var ScreenShakeWait = 0.0
+
 func _ready():
+	if Global.Level > Global.LevelsUnlocked:
+		Global.LevelsUnlocked = Global.Level
+		Global.SaveLevel()
+	Global.ScreenShake = 0.0
+	Global.Update = false
 	$UI/Begin/FadeInAnimationPlayer.play("FadeIn")
 	$UI/Begin/LevelLabel.text = "Level " + str(Global.Level)
 	Global.Exploded = true
@@ -25,31 +34,48 @@ func _on_GenerationTimer_timeout():
 	PlaceSnake()
 	PlaceGhosts()
 	PlaceCherry()
-	Global.SetSnakeSpeed(0)
+	Global.SetSnakeSpeed(60.0)
 
 func _process(delta):
-	if Global.Exploded and Begun:
-		if Explosions.get_child_count() == 0:
-			if not LevelEnd:
-				LevelEnd = true
-				$UI/End.visible = true
-				if Ghosts.get_child_count() > 0:
-					Won = false
-					$UI/End/Loose.visible = true
-				else:
-					Won = true
-					$UI/End/Win.visible = true
+	if Begun:
+		if Global.Exploded:
+			Global.Update = false
+			ScreenShakeWait -= delta
+			if ScreenShakeWait < 0.0:
+				ScreenShakeWait = 0.05
+				$Camera2D.offset = Vector2(rand_range(-Global.ScreenShake, Global.ScreenShake), rand_range(-Global.ScreenShake, Global.ScreenShake))
+			Global.ScreenShake = max(Global.ScreenShake - delta * 5.0, 0.0)
+			if Explosions.get_child_count() == 0:
+				if not LevelEnd:
+					LevelEnd = true
+					$UI/End.visible = true
+					if Ghosts.get_child_count() > 0:
+						Won = false
+						$UI/End/Loose.visible = true
+					else:
+						Won = true
+						$UI/End/Win.visible = true
+		else:
+			UpdateCounter += 1
+			if UpdateCounter > Global.UpdateDelay:
+				UpdateCounter = 0
+				Global.Update = true
+			else:
+				Global.Update = false
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Begun = false
 		Global.Exploded = true
-		Global.SetSnakeSpeed(0)
+		Global.SetSnakeSpeed(60.0)
 		SceneChanger.ChangeScene("res://scenes/MainMenu.tscn")
 	elif LevelEnd and event is InputEventKey and event.pressed:
 		if Won:
 			Global.Level += 1
-		SceneChanger.ChangeScene("res://scenes/Main.tscn")
+		if Global.Level > 10:
+			SceneChanger.ChangeScene("res://scenes/End.tscn")
+		else:
+			SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func GenerateMap():
 	for i in range(4):
@@ -148,7 +174,7 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	Global.SetSnakeSpeed(Global.Level * 4)
+	Global.SetSnakeSpeed(Global.Level + 2)
 	$UI/Begin/StartTimer.start()
 
 func _on_StartTimer_timeout():

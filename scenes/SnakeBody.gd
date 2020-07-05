@@ -15,7 +15,7 @@ func _ready():
 	SetSprite()
 
 func _process(delta):
-	if not Global.Exploded:
+	if not Global.Exploded and Global.Update:
 		Life += 1
 		SetSprite()
 		if Life > Global.SnakeLength:

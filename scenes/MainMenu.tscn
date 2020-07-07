@@ -40,9 +40,10 @@ font_data = ExtResource( 2 )
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 88.0
+margin_bottom = -136.0
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

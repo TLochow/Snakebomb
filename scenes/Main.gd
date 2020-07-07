@@ -69,7 +69,7 @@ func _input(event):
 		Global.Exploded = true
 		Global.SetSnakeSpeed(60.0)
 		SceneChanger.ChangeScene("res://scenes/MainMenu.tscn")
-	elif LevelEnd and event is InputEventKey and event.pressed:
+	elif LevelEnd and ((event is InputEventKey and event.pressed) or event.is_action_pressed("mouse_click")):
 		if Won:
 			Global.Level += 1
 		if Global.Level > 10:
@@ -180,3 +180,30 @@ func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 func _on_StartTimer_timeout():
 	Begun = true
 	Global.Exploded = false
+
+func _on_Menu_pressed():
+	SceneChanger.ChangeScene("res://scenes/MainMenu.tscn")
+
+func _on_Right_pressed():
+	var ev = InputEventAction.new()
+	ev.action = "ui_right"
+	ev.pressed = true
+	$Snake._input(ev)
+
+func _on_Left_pressed():
+	var ev = InputEventAction.new()
+	ev.action = "ui_left"
+	ev.pressed = true
+	$Snake._input(ev)
+
+func _on_Up_pressed():
+	var ev = InputEventAction.new()
+	ev.action = "ui_up"
+	ev.pressed = true
+	$Snake._input(ev)
+
+func _on_Down_pressed():
+	var ev = InputEventAction.new()
+	ev.action = "ui_down"
+	ev.pressed = true
+	$Snake._input(ev)

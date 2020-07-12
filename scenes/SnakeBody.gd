@@ -12,6 +12,9 @@ var Explosions
 
 func _ready():
 	Life = 0
+	
+	$Sprite.modulate = Global.SnakeColor
+	
 	SetSprite()
 
 func _process(delta):

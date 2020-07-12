@@ -30,10 +30,10 @@ func _on_BackButton_pressed():
 
 func SetMuteButtonText():
 	if Global.MuteSound:
-		$Main/Buttons/MuteButton/Label.text = """Unmute
+		$Settings/Main/MuteButton/Label.text = """Unmute
 Sound"""
 	else:
-		$Main/Buttons/MuteButton/Label.text = """Mute
+		$Settings/Main/MuteButton/Label.text = """Mute
 Sound"""
 
 func SetLevelButtonsEnabled():
@@ -112,3 +112,13 @@ func _on_ShaderButton_pressed():
 func _on_GlowButton_pressed():
 	$ButtonPressed.play()
 	GlobalShader.ToggleGlow()
+
+func _on_SettingsButton_pressed():
+	$ButtonPressed.play()
+	$Main.visible = false
+	$Settings.visible = true
+
+func _on_SettingsBackButton_pressed():
+	$ButtonPressed.play()
+	$Main.visible = true
+	$Settings.visible = false

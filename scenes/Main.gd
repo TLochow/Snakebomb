@@ -27,6 +27,10 @@ func _ready():
 	$UI/Begin/LevelLabel.text = "Level " + str(Global.Level)
 	Global.Exploded = true
 	Global.SnakeLength = 0
+	
+	$TileMap.modulate = Global.LevelColor
+	$Cherry/Sprite.modulate = Global.CherryColor
+	
 	GenerateMap()
 	$GenerationTimer.start()
 

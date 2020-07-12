@@ -23,6 +23,12 @@ var RetroShaderActive = false
 
 var LevelsUnlocked = 1
 
+var LevelColor = Color(1.0, 0.0, 0.471)
+var SnakeColor = Color(0.0, 0.667, 0.043)
+var CherryColor = Color(1.0, 0.0, 0.0)
+var ExplosionColor = Color(0.933, 0.0, 0.0)
+var GhostColor = Color(0.0, 0.882, 1.0)
+
 func SetSnakeSpeed(speed):
 	SnakeSpeed = speed
 	UpdateDelay = 60.0 / SnakeSpeed

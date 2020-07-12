@@ -22,6 +22,7 @@ var MouthOpen = false
 func _ready():
 	Direction = Global.DirRight
 	PreviousDirection = Direction
+	$Sprite.modulate = Global.SnakeColor
 
 func _input(event):
 	if not Global.Exploded:

@@ -16,6 +16,8 @@ func _ready():
 	MovingHorizontal = direction % 2 == 0
 	IncreasingMoveValue = direction > 1
 	
+	$Sprite.modulate = Global.GhostColor
+	
 	SetSprite()
 
 func _process(delta):

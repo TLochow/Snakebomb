@@ -1,6 +1,8 @@
 extends Area2D
 
 func _ready():
+	$Sprite.modulate = Global.ExplosionColor
+	
 	Global.ScreenShake = min(Global.ScreenShake + 2.0, 5.0)
 	$AnimationPlayer.play("Explosion")
 

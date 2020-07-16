@@ -28,6 +28,16 @@ func _ready():
 	$TileMap.modulate = Global.LevelColor
 	$Cherry/Sprite.modulate = Global.CherryColor
 	
+	var levelSize = 12 + (Global.Level * 2)
+	var cameraZoom = range_lerp(levelSize, 14.0, 34.0, 0.4375, 1.0)
+	$Camera2D.zoom *= cameraZoom
+	SpawnableArea *= cameraZoom
+	var mapBlockMin = levelSize - 1
+	for x in range(36):
+		for y in range(36):
+			if x > mapBlockMin or y > mapBlockMin:
+				Map.set_cell(x, y, 0)
+	
 	GenerateMap()
 	$GenerationTimer.start()
 
@@ -37,23 +47,22 @@ func _on_GenerationTimer_timeout():
 	PlaceCherry()
 
 func _process(delta):
-	if Begun:
-		if Global.Exploded:
-			ScreenShakeWait -= delta
-			if ScreenShakeWait < 0.0:
-				ScreenShakeWait = 0.05
-				$Camera2D.offset = Vector2(rand_range(-Global.ScreenShake, Global.ScreenShake), rand_range(-Global.ScreenShake, Global.ScreenShake))
-			Global.ScreenShake = max(Global.ScreenShake - delta * 5.0, 0.0)
-			if Explosions.get_child_count() == 0:
-				if not LevelEnd:
-					LevelEnd = true
-					$UI/End.visible = true
-					if Ghosts.get_child_count() > 0:
-						Won = false
-						$UI/End/Loose.visible = true
-					else:
-						Won = true
-						$UI/End/Win.visible = true
+	if Begun and Global.Exploded:
+		ScreenShakeWait -= delta
+		if ScreenShakeWait < 0.0:
+			ScreenShakeWait = 0.05
+			$Camera2D.offset = Vector2(rand_range(-Global.ScreenShake, Global.ScreenShake), rand_range(-Global.ScreenShake, Global.ScreenShake))
+		Global.ScreenShake = max(Global.ScreenShake - delta * 5.0, 0.0)
+		if Explosions.get_child_count() == 0:
+			if not LevelEnd:
+				LevelEnd = true
+				$UI/End.visible = true
+				if Ghosts.get_child_count() > 0:
+					Won = false
+					$UI/End/Loose.visible = true
+				else:
+					Won = true
+					$UI/End/Win.visible = true
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -69,14 +78,15 @@ func _input(event):
 			SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func GenerateMap():
-	for i in range(4):
+	var numberOfBlocks = ceil(Global.Level / 2.5)
+	for i in range(numberOfBlocks):
 		var valid = false
 		while not valid:
 			var pos = GetRandomCoords()
 			if pos.x > 64 and pos.y > 64 and pos.x < 224 and pos.y < 224:
 				valid = true
-				var blockSizeX = ((randi() % 6) + 1)
-				var blockSizeY = ((randi() % 6) + 1)
+				var blockSizeX = ((randi() % Global.Level) + 1)
+				var blockSizeY = ((randi() % Global.Level) + 1)
 				var coord = Map.world_to_map(pos)
 				var minX = coord.x - blockSizeX
 				var maxX = coord.x + blockSizeX
@@ -125,7 +135,7 @@ func PlaceCherry():
 	$Cherry.set_position(GetFreeSpace())
 
 func PlaceGhosts():
-	for i in range(Global.Level + 1):
+	for i in range(Global.Level):
 		var validPlace = false
 		while not validPlace:
 			var pos = GetFreeSpace()
@@ -141,10 +151,6 @@ func GetFreeSpace():
 	while not validPlace:
 		pos = NormalizeCoords(GetRandomCoords())
 		validPlace = CheckFree(pos)
-		validPlace = validPlace and CheckFree(pos + Vector2(-8, 0))
-		validPlace = validPlace and CheckFree(pos + Vector2(8, 0))
-		validPlace = validPlace and CheckFree(pos + Vector2(0, -8))
-		validPlace = validPlace and CheckFree(pos + Vector2(0, 8))
 	return pos
 
 func GetRandomCoords():
@@ -166,7 +172,7 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	$MoveTimer.wait_time = 1.0 / (Global.Level + 2.0)
+	$MoveTimer.wait_time = 1.0 / ((Global.Level / 2.0) + 5.0)
 	$MoveTimer.connect("timeout", $Snake, "Update")
 	var ghosts = $Ghosts.get_children()
 	for ghost in ghosts:

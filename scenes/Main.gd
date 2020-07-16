@@ -7,8 +7,6 @@ onready var Explosions = $Explosions
 onready var Ghosts = $Ghosts
 onready var Map = $TileMap
 
-var UpdateCounter = 0
-
 var Begun = false
 var LevelEnd = false
 var Won = false
@@ -22,7 +20,6 @@ func _ready():
 		Global.LevelsUnlocked = Global.Level
 		Global.SaveLevel()
 	Global.ScreenShake = 0.0
-	Global.Update = false
 	$UI/Begin/FadeInAnimationPlayer.play("FadeIn")
 	$UI/Begin/LevelLabel.text = "Level " + str(Global.Level)
 	Global.Exploded = true
@@ -38,12 +35,10 @@ func _on_GenerationTimer_timeout():
 	PlaceSnake()
 	PlaceGhosts()
 	PlaceCherry()
-	Global.SetSnakeSpeed(60.0)
 
 func _process(delta):
 	if Begun:
 		if Global.Exploded:
-			Global.Update = false
 			ScreenShakeWait -= delta
 			if ScreenShakeWait < 0.0:
 				ScreenShakeWait = 0.05
@@ -59,19 +54,11 @@ func _process(delta):
 					else:
 						Won = true
 						$UI/End/Win.visible = true
-		else:
-			UpdateCounter += 1
-			if UpdateCounter > Global.UpdateDelay:
-				UpdateCounter = 0
-				Global.Update = true
-			else:
-				Global.Update = false
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Begun = false
 		Global.Exploded = true
-		Global.SetSnakeSpeed(60.0)
 		SceneChanger.ChangeScene("res://scenes/MainMenu.tscn")
 	elif LevelEnd and event is InputEventKey and event.pressed:
 		if Won:
@@ -131,6 +118,7 @@ func PlaceSnake():
 			snakeBody.PreviousDirection = direction
 			snakeBody.set_position(pos - (direction * 8))
 			snakeBody.SetSprite()
+			$MoveTimer.connect("timeout", snakeBody, "Update")
 			$SnakeBodies.add_child(snakeBody)
 
 func PlaceCherry():
@@ -178,9 +166,17 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	Global.SetSnakeSpeed(Global.Level + 2)
+	$MoveTimer.wait_time = 1.0 / (Global.Level + 2.0)
+	$MoveTimer.connect("timeout", $Snake, "Update")
+	var ghosts = $Ghosts.get_children()
+	for ghost in ghosts:
+		$MoveTimer.connect("timeout", ghost, "Update")
 	$UI/Begin/StartTimer.start()
 
 func _on_StartTimer_timeout():
 	Begun = true
 	Global.Exploded = false
+	$MoveTimer.start()
+
+func _on_Snake_Explode():
+	$MoveTimer.stop()

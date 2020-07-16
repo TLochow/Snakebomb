@@ -20,8 +20,8 @@ func _ready():
 	
 	SetSprite()
 
-func _process(delta):
-	if not Global.Exploded and Global.Update:
+func Update():
+	if not Global.Exploded:
 		FirstSprite = not FirstSprite
 		if CheckFree():
 			var pos = get_position()

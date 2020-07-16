@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 signal AteCherry
+signal Explode
 
 var SNAKEBODYSCENE = preload("res://scenes/SnakeBody.tscn")
 var EXPLOSIONSCENE = preload("res://scenes/Explosion.tscn")
@@ -16,6 +17,8 @@ export(NodePath) var BodiesPath
 onready var SnakeBodies = get_node(BodiesPath)
 export(NodePath) var ExplosionPath
 onready var Explosions = get_node(ExplosionPath)
+export(NodePath) var UpdateTimerPath
+onready var UpdateTimer = get_node(UpdateTimerPath)
 
 var MouthOpen = false
 
@@ -35,8 +38,8 @@ func _input(event):
 		elif event.is_action_pressed("ui_right"):
 			DirectionChanges.append(Global.DirRight)
 
-func _process(delta):
-	if not Global.Exploded and Global.Update:
+func Update():
+	if not Global.Exploded:
 		if CherrySensor.get_overlapping_bodies().size() > 0:
 			Global.SnakeLength += 1
 			$Pickup.play()
@@ -80,6 +83,7 @@ func SpawnSnakeBody(pos):
 	snakeBody.PreviousDirection = PreviousDirection
 	snakeBody.Explosions = Explosions
 	snakeBody.set_position(pos)
+	UpdateTimer.connect("timeout", snakeBody, "Update")
 	SnakeBodies.add_child(snakeBody)
 
 func CheckFree():
@@ -98,7 +102,7 @@ func CheckFree():
 func Explode():
 	if not Global.Exploded:
 		Global.Exploded = true
-		Global.SetSnakeSpeed(60.0)
+		emit_signal("Explode")
 		var explosion = EXPLOSIONSCENE.instance()
 		explosion.set_position(get_position())
 		Explosions.add_child(explosion)

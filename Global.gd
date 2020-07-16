@@ -1,7 +1,5 @@
 extends Node
 
-var Update = true
-
 var Level = 1
 
 var DirLeft = Vector2(-1, 0)
@@ -12,8 +10,6 @@ var DirDown = Vector2(0, 1)
 var ScreenShake = 0.0
 
 var SnakeLength
-var SnakeSpeed
-var UpdateDelay
 
 var Exploded
 
@@ -31,10 +27,6 @@ var GhostColor = Color(0.0, 0.882, 1.0)
 
 func _ready():
 	LoadColors()
-
-func SetSnakeSpeed(speed):
-	SnakeSpeed = speed
-	UpdateDelay = 60.0 / SnakeSpeed
 
 func LoadSoundSettings():
 	MuteSound = false

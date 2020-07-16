@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sprites/explosion.png" type="Texture" id=10]
 [ext_resource path="res://sounds/Button.wav" type="AudioStream" id=11]
 [ext_resource path="res://sprites/button inactive.png" type="Texture" id=12]
+[ext_resource path="res://sprites/hues.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -21,19 +22,19 @@ font_data = ExtResource( 2 )
 size = 10
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 10
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 6
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 8
 font_data = ExtResource( 2 )
 
@@ -41,16 +42,8 @@ font_data = ExtResource( 2 )
 size = 14
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 6
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=9]
 size = 8
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 11
 font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="Control"]
@@ -76,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Snakebomb"
 align = 1
 valign = 1
@@ -106,7 +99,7 @@ expand = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Start"
 align = 1
 valign = 1
@@ -129,7 +122,7 @@ expand = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "How to play"
 align = 1
 valign = 1
@@ -152,7 +145,7 @@ expand = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Settings"
 align = 1
 valign = 1
@@ -178,7 +171,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Exit"
 align = 1
 valign = 1
@@ -200,7 +193,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Select Level"
 align = 1
 valign = 1
@@ -232,7 +225,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 1"
 align = 1
@@ -259,7 +252,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 2"
 align = 1
@@ -286,7 +279,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 3"
 align = 1
@@ -313,7 +306,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 4"
 align = 1
@@ -340,7 +333,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level5"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 5"
 align = 1
@@ -367,7 +360,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level6"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 6"
 align = 1
@@ -394,7 +387,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level7"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 7"
 align = 1
@@ -421,7 +414,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level8"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 8"
 align = 1
@@ -448,7 +441,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level9"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 9"
 align = 1
@@ -475,7 +468,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Level10"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 10"
 align = 1
@@ -502,8 +495,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Back"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 align = 1
 valign = 1
@@ -525,7 +518,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "How to Play"
 align = 1
 valign = 1
@@ -538,8 +531,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
 margin_bottom = -56.0
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Use the Arrow keys, WASD, ZQSD or IJKL
 to change direction
 
@@ -559,63 +552,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprites" type="Control" parent="HowTo/Label2"]
+[node name="Sprites" type="Control" parent="HowTo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -16.0
-margin_bottom = -24.0
+margin_top = 8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 236, 100 )
 texture = ExtResource( 7 )
 
-[node name="Sprite10" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite10" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.882353, 1, 1 )
 position = Vector2( 128, 152 )
 texture = ExtResource( 9 )
 vframes = 4
 hframes = 2
 
-[node name="Sprite24" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite24" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.882353, 1, 1 )
 position = Vector2( 136, 200 )
 texture = ExtResource( 9 )
 vframes = 4
 hframes = 2
 
-[node name="Sprite25" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite25" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.882353, 1, 1 )
 position = Vector2( 120, 208 )
 texture = ExtResource( 9 )
 vframes = 4
 hframes = 2
 
-[node name="Sprite26" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite26" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.882353, 1, 1 )
 position = Vector2( 152, 192 )
 texture = ExtResource( 9 )
 vframes = 4
 hframes = 2
 
-[node name="Sprite28" type="Sprite" parent="HowTo/Label2/Sprites"]
-modulate = Color( 0, 0.882353, 1, 1 )
-position = Vector2( 152, 192 )
-texture = ExtResource( 9 )
-vframes = 4
-hframes = 2
-
-[node name="Sprite27" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite27" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.882353, 1, 1 )
 position = Vector2( 144, 216 )
 texture = ExtResource( 9 )
 vframes = 4
 hframes = 2
 
-[node name="Sprite2" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite2" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 228, 100 )
 texture = ExtResource( 6 )
@@ -623,7 +608,7 @@ vframes = 3
 hframes = 8
 frame = 1
 
-[node name="Sprite3" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite3" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 220, 100 )
 texture = ExtResource( 6 )
@@ -631,7 +616,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite4" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite4" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 212, 100 )
 texture = ExtResource( 6 )
@@ -639,7 +624,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite5" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite5" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 204, 100 )
 texture = ExtResource( 6 )
@@ -647,7 +632,7 @@ vframes = 3
 hframes = 8
 frame = 16
 
-[node name="Sprite9" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite9" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 100, 148 )
 texture = ExtResource( 6 )
@@ -655,7 +640,7 @@ vframes = 3
 hframes = 8
 frame = 18
 
-[node name="Sprite8" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite8" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 92, 148 )
 texture = ExtResource( 6 )
@@ -663,7 +648,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite7" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite7" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 84, 148 )
 texture = ExtResource( 6 )
@@ -671,7 +656,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite6" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite6" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 76, 148 )
 texture = ExtResource( 6 )
@@ -679,7 +664,7 @@ vframes = 3
 hframes = 8
 frame = 4
 
-[node name="Sprite14" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite14" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 160, 152 )
 texture = ExtResource( 6 )
@@ -687,7 +672,7 @@ vframes = 3
 hframes = 8
 frame = 18
 
-[node name="Sprite13" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite13" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 152, 152 )
 texture = ExtResource( 6 )
@@ -695,7 +680,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite12" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite12" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 144, 152 )
 texture = ExtResource( 6 )
@@ -703,7 +688,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite11" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite11" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 136, 152 )
 texture = ExtResource( 6 )
@@ -711,7 +696,7 @@ vframes = 3
 hframes = 8
 frame = 4
 
-[node name="Sprite18" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite18" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 232, 152 )
 texture = ExtResource( 6 )
@@ -719,7 +704,7 @@ vframes = 3
 hframes = 8
 frame = 10
 
-[node name="Sprite19" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite19" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 232, 144 )
 texture = ExtResource( 6 )
@@ -727,7 +712,7 @@ vframes = 3
 hframes = 8
 frame = 9
 
-[node name="Sprite20" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite20" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 232, 136 )
 texture = ExtResource( 6 )
@@ -735,7 +720,7 @@ vframes = 3
 hframes = 8
 frame = 13
 
-[node name="Sprite21" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite21" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 224, 136 )
 texture = ExtResource( 6 )
@@ -743,7 +728,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite22" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite22" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 216, 136 )
 texture = ExtResource( 6 )
@@ -751,7 +736,7 @@ vframes = 3
 hframes = 8
 frame = 12
 
-[node name="Sprite23" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite23" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 216, 144 )
 texture = ExtResource( 6 )
@@ -759,7 +744,7 @@ vframes = 3
 hframes = 8
 frame = 3
 
-[node name="Sprite17" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite17" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 224, 152 )
 texture = ExtResource( 6 )
@@ -767,7 +752,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite16" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite16" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 216, 152 )
 texture = ExtResource( 6 )
@@ -775,7 +760,7 @@ vframes = 3
 hframes = 8
 frame = 8
 
-[node name="Sprite15" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite15" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0, 0.666667, 0.0431373, 1 )
 position = Vector2( 208, 152 )
 texture = ExtResource( 6 )
@@ -783,14 +768,14 @@ vframes = 3
 hframes = 8
 frame = 16
 
-[node name="Sprite29" type="Sprite" parent="HowTo/Label2/Sprites"]
+[node name="Sprite29" type="Sprite" parent="HowTo/Sprites"]
 modulate = Color( 0.933333, 0, 0, 1 )
 position = Vector2( 112, 208 )
 texture = ExtResource( 10 )
 hframes = 6
 frame = 2
 
-[node name="TileMap" parent="HowTo/Label2/Sprites" instance=ExtResource( 8 )]
+[node name="TileMap" parent="HowTo/Sprites" instance=ExtResource( 8 )]
 modulate = Color( 1, 0, 0.470588, 1 )
 tile_data = PoolIntArray( 1114119, 0, 0, 1114120, 0, 2, 1179654, 0, 0, 1179655, 0, 65540, 1179656, 0, 65538, 1245190, 0, 131072, 1245191, 0, 131073, 1245192, 0, 131074 )
 
@@ -811,7 +796,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 align = 1
 valign = 1
@@ -837,7 +822,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Settings"
 align = 1
 valign = 1
@@ -862,8 +847,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/MuteButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Mute
 Sound"
 align = 1
@@ -889,8 +874,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/GlowButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Toggle Glow
 Shader"
 align = 1
@@ -916,8 +901,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/ShaderButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Toggle Retro
 Shader"
 align = 1
@@ -943,8 +928,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/ColorsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Configure
 Colors"
 align = 1
@@ -970,8 +955,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/SettingsBackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 align = 1
 valign = 1
@@ -992,7 +977,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
 custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Color Configuration"
 align = 1
 valign = 1
@@ -1001,27 +986,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Settings/Colors"]
+[node name="Level" type="Control" parent="Settings/Colors"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 40.0
-margin_bottom = -213.0
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
-text = "Please enter colors in HEX format."
-align = 1
-valign = 1
+margin_top = 64.0
+margin_bottom = -192.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LevelColorLabel" type="Label" parent="Settings/Colors"]
+[node name="Label" type="Label" parent="Settings/Colors/Level"]
 margin_left = 8.0
-margin_top = 80.0
+margin_top = 8.0
 margin_right = 104.0
-margin_bottom = 94.0
+margin_bottom = 22.0
 custom_fonts/font = SubResource( 9 )
-custom_colors/font_color = Color( 1, 0, 0.470588, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level Color:"
 align = 1
 valign = 1
@@ -1029,18 +1009,277 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="TextEdit" parent="Settings/Colors"]
-margin_left = 112.0
-margin_top = 72.0
-margin_right = 192.0
-margin_bottom = 96.0
-custom_fonts/font = SubResource( 10 )
-text = "FFFFFF"
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Level"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
 
-[node name="Demonstration" type="Control" parent="Settings/Colors"]
+[node name="LevelColorSlider" type="HSlider" parent="Settings/Colors/Level"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Snake" type="Control" parent="Settings/Colors"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
+margin_top = 96.0
+margin_bottom = -160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Snake"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Snake Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Snake"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="SnakeColorSlider" type="HSlider" parent="Settings/Colors/Snake"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 204, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 1
+
+[node name="Sprite2" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 196, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite3" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 188, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite4" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 16
+
+[node name="Cherry" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 128.0
+margin_bottom = -128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Cherry"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cherry Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Cherry"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="CherryColorSlider" type="HSlider" parent="Settings/Colors/Cherry"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Cherry"]
+position = Vector2( 204, 28 )
+texture = ExtResource( 7 )
+
+[node name="Ghost" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 160.0
+margin_bottom = -96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Ghost"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ghost Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Ghost"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="GhostColorSlider" type="HSlider" parent="Settings/Colors/Ghost"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Ghost"]
+position = Vector2( 160, 28 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Explosion" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 192.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Explosion"]
+margin_left = 8.0
+margin_right = 104.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Explosion
+Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Explosion"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="ExplosionColorSlider" type="HSlider" parent="Settings/Colors/Explosion"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Explosion"]
+position = Vector2( 248, 32 )
+texture = ExtResource( 10 )
+hframes = 6
+frame = 2
+
+[node name="ColorBackButton" type="TextureButton" parent="Settings/Colors"]
+margin_left = 56.0
+margin_top = 240.0
+margin_right = 168.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/ColorBackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="DefaultColorsButton" type="TextureButton" parent="Settings/Colors"]
+margin_left = 192.0
+margin_top = 240.0
+margin_right = 272.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/DefaultColorsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Defaults"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -1064,4 +1303,12 @@ volume_db = -10.0
 [connection signal="pressed" from="Settings/Main/MuteButton" to="." method="_on_MuteButton_pressed"]
 [connection signal="pressed" from="Settings/Main/GlowButton" to="." method="_on_GlowButton_pressed"]
 [connection signal="pressed" from="Settings/Main/ShaderButton" to="." method="_on_ShaderButton_pressed"]
+[connection signal="pressed" from="Settings/Main/ColorsButton" to="." method="_on_ColorsButton_pressed"]
 [connection signal="pressed" from="Settings/Main/SettingsBackButton" to="." method="_on_SettingsBackButton_pressed"]
+[connection signal="value_changed" from="Settings/Colors/Level/LevelColorSlider" to="." method="_on_LevelColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Snake/SnakeColorSlider" to="." method="_on_SnakeColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Cherry/CherryColorSlider" to="." method="_on_CherryColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Ghost/GhostColorSlider" to="." method="_on_GhostColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Explosion/ExplosionColorSlider" to="." method="_on_ExplosionColorSlider_value_changed"]
+[connection signal="pressed" from="Settings/Colors/ColorBackButton" to="." method="_on_ColorBackButton_pressed"]
+[connection signal="pressed" from="Settings/Colors/DefaultColorsButton" to="." method="_on_DefaultColorsButton_pressed"]

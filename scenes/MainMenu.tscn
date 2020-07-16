@@ -579,12 +579,13 @@ Collect cherry-bombs to grow larger.
 
 
 Run into a wall, a ghost or yourself
-to explode.
+to explode in a chain reaction.
 
 
 
 Destroy all ghosts with your explosion
-to get to the next level."
+to get to the next level.
+An Explosion covers an area of 5x5 cells."
 align = 1
 valign = 1
 __meta__ = {
@@ -815,7 +816,6 @@ hframes = 6
 frame = 2
 
 [node name="TileMap" parent="HowTo/Sprites" instance=ExtResource( 8 )]
-modulate = Color( 1, 0, 0.470588, 1 )
 tile_data = PoolIntArray( 1114119, 0, 0, 1114120, 0, 2, 1179654, 0, 0, 1179655, 0, 65540, 1179656, 0, 65538, 1245190, 0, 131072, 1245191, 0, 131073, 1245192, 0, 131074 )
 
 [node name="BackButton" type="TextureButton" parent="HowTo"]

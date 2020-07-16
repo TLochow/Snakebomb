@@ -16,19 +16,22 @@ var SpawnableArea = Vector2(272, 272)
 var ScreenShakeWait = 0.0
 
 func _ready():
-	if Global.Level > Global.LevelsUnlocked:
+	if Global.LevelMode and Global.Level > Global.LevelsUnlocked:
 		Global.LevelsUnlocked = Global.Level
 		Global.SaveLevel()
 	Global.ScreenShake = 0.0
 	$UI/Begin/FadeInAnimationPlayer.play("FadeIn")
-	$UI/Begin/LevelLabel.text = "Level " + str(Global.Level)
+	if Global.LevelMode:
+		$UI/Begin/LevelLabel.text = "Level " + str(Global.Level)
+	else:
+		$UI/Begin/LevelLabel.text = "Custom Game"
 	Global.Exploded = true
 	Global.SnakeLength = 0
 	
 	$TileMap.modulate = Global.LevelColor
 	$Cherry/Sprite.modulate = Global.CherryColor
 	
-	var levelSize = 12 + (Global.Level * 2)
+	var levelSize = 12 + (Global.LevelSize * 2)
 	var cameraZoom = range_lerp(levelSize, 14.0, 34.0, 0.4375, 1.0)
 	$Camera2D.zoom *= cameraZoom
 	SpawnableArea *= cameraZoom
@@ -70,23 +73,24 @@ func _input(event):
 		Global.Exploded = true
 		SceneChanger.ChangeScene("res://scenes/MainMenu.tscn")
 	elif LevelEnd and event is InputEventKey and event.pressed:
-		if Won:
+		if Won and Global.LevelMode:
 			Global.Level += 1
+			Global.SetDifficultiesByLevel()
 		if Global.Level > 10:
 			SceneChanger.ChangeScene("res://scenes/End.tscn")
 		else:
 			SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func GenerateMap():
-	var numberOfBlocks = ceil(Global.Level / 2.5)
+	var numberOfBlocks = ceil(Global.LevelSize / 2.5)
 	for i in range(numberOfBlocks):
 		var valid = false
 		while not valid:
 			var pos = GetRandomCoords()
 			if pos.x > 64 and pos.y > 64 and pos.x < 224 and pos.y < 224:
 				valid = true
-				var blockSizeX = ((randi() % Global.Level) + 1)
-				var blockSizeY = ((randi() % Global.Level) + 1)
+				var blockSizeX = ((randi() % int(Global.LevelSize)) + 1)
+				var blockSizeY = ((randi() % int(Global.LevelSize)) + 1)
 				var coord = Map.world_to_map(pos)
 				var minX = coord.x - blockSizeX
 				var maxX = coord.x + blockSizeX
@@ -135,7 +139,7 @@ func PlaceCherry():
 	$Cherry.set_position(GetFreeSpace())
 
 func PlaceGhosts():
-	for i in range(Global.Level):
+	for i in range(Global.GhostCount):
 		var validPlace = false
 		while not validPlace:
 			var pos = GetFreeSpace()
@@ -147,10 +151,12 @@ func PlaceGhosts():
 
 func GetFreeSpace():
 	var validPlace = false
+	var tryCount = 0
 	var pos
-	while not validPlace:
+	while not validPlace and tryCount < 10:
 		pos = NormalizeCoords(GetRandomCoords())
 		validPlace = CheckFree(pos)
+		tryCount += 1
 	return pos
 
 func GetRandomCoords():
@@ -172,7 +178,7 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	$MoveTimer.wait_time = 1.0 / ((Global.Level / 2.0) + 5.0)
+	$MoveTimer.wait_time = 1.0 / ((Global.Speed / 2.0) + 5.0)
 	$MoveTimer.connect("timeout", $Snake, "Update")
 	var ghosts = $Ghosts.get_children()
 	for ghost in ghosts:

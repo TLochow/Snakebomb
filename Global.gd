@@ -1,6 +1,10 @@
 extends Node
 
+var LevelMode = true
 var Level = 1
+var LevelSize = 1
+var GhostCount = 1
+var Speed = 1
 
 var DirLeft = Vector2(-1, 0)
 var DirRight = Vector2(1, 0)
@@ -27,6 +31,11 @@ var GhostColor = Color(0.0, 0.882, 1.0)
 
 func _ready():
 	LoadColors()
+
+func SetDifficultiesByLevel():
+	LevelSize = Level
+	GhostCount = Level
+	Speed = Level
 
 func LoadSoundSettings():
 	MuteSound = false

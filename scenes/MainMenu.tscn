@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=2]
@@ -33,6 +33,24 @@ font_data = ExtResource( 2 )
 size = 10
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=20]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 14
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 6
 font_data = ExtResource( 2 )
@@ -52,12 +70,6 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=9]
 size = 8
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 160, 16 )
-
-[sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 14 )
@@ -532,6 +544,274 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="LevelSelect/Buttons/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Custom" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 200.0
+margin_top = 260.0
+margin_right = 280.0
+margin_bottom = 284.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Custom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Custom"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CustomDifficulty" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Custom
+Difficulty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSizeSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 256.0
+margin_bottom = 112.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/LevelSizeSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = 4.0
+margin_right = -160.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level Size:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/LevelSizeSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GhostAmountSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 144.0
+margin_right = 256.0
+margin_bottom = 160.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/GhostAmountSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = 4.0
+margin_right = -156.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ghosts:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/GhostAmountSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 120.0
+margin_right = 256.0
+margin_bottom = 136.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/SpeedSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = 4.0
+margin_right = -156.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Speed:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/SpeedSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CustomDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 168.0
+margin_bottom = -96.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Warning! Many Ghosts in small
+levels can lead to spawning issues."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="CustomDifficulty"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartCustom" type="TextureButton" parent="CustomDifficulty/Buttons"]
+margin_left = 84.0
+margin_top = 208.0
+margin_right = 204.0
+margin_bottom = 248.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty/Buttons/StartCustom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CustomDifficultyBack2" type="TextureButton" parent="CustomDifficulty/Buttons"]
+margin_left = 92.0
+margin_top = 256.0
+margin_right = 196.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty/Buttons/CustomDifficultyBack2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 4 )
@@ -1359,6 +1639,12 @@ volume_db = -10.0
 [connection signal="pressed" from="LevelSelect/Buttons/Level9" to="." method="_on_Level9_pressed"]
 [connection signal="pressed" from="LevelSelect/Buttons/Level10" to="." method="_on_Level10_pressed"]
 [connection signal="pressed" from="LevelSelect/Buttons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Custom" to="." method="_on_Custom_pressed"]
+[connection signal="value_changed" from="CustomDifficulty/LevelSizeSlider" to="." method="_on_LevelSizeSlider_value_changed"]
+[connection signal="value_changed" from="CustomDifficulty/GhostAmountSlider" to="." method="_on_GhostAmountSlider_value_changed"]
+[connection signal="value_changed" from="CustomDifficulty/SpeedSlider" to="." method="_on_SpeedSlider_value_changed"]
+[connection signal="pressed" from="CustomDifficulty/Buttons/StartCustom" to="." method="_on_StartCustom_pressed"]
+[connection signal="pressed" from="CustomDifficulty/Buttons/CustomDifficultyBack2" to="." method="_on_CustomDifficultyBack_pressed"]
 [connection signal="pressed" from="HowTo/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Settings/Main/MuteButton" to="." method="_on_MuteButton_pressed"]
 [connection signal="pressed" from="Settings/Main/GlowButton" to="." method="_on_GlowButton_pressed"]

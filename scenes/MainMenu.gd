@@ -9,6 +9,10 @@ func _ready():
 	SetLevelButtonsEnabled()
 	SetMuteButtonText()
 	SetColorSliderValues()
+	SetCustomDifficultySliderValues()
+	if not Global.LevelMode:
+		$Main.visible = false
+		$CustomDifficulty.visible = true
 
 func _on_StartButton_pressed():
 	$ButtonPressed.play()
@@ -56,54 +60,79 @@ func _on_Back_pressed():
 	$LevelSelect.visible = false
 	$Main.visible = true
 
+func _on_Custom_pressed():
+	$ButtonPressed.play()
+	$LevelSelect.visible = false
+	$CustomDifficulty.visible = true
+
 func _on_Level1_pressed():
 	$ButtonPressed.play()
 	Global.Level = 1
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level2_pressed():
 	$ButtonPressed.play()
 	Global.Level = 2
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level3_pressed():
 	$ButtonPressed.play()
 	Global.Level = 3
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level4_pressed():
 	$ButtonPressed.play()
 	Global.Level = 4
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level5_pressed():
 	$ButtonPressed.play()
 	Global.Level = 5
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level6_pressed():
 	$ButtonPressed.play()
 	Global.Level = 6
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level7_pressed():
 	$ButtonPressed.play()
 	Global.Level = 7
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level8_pressed():
 	$ButtonPressed.play()
 	Global.Level = 8
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level9_pressed():
 	$ButtonPressed.play()
 	Global.Level = 9
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_Level10_pressed():
 	$ButtonPressed.play()
 	Global.Level = 10
+	Global.SetDifficultiesByLevel()
+	Global.LevelMode = true
 	SceneChanger.ChangeScene("res://scenes/Main.tscn")
 
 func _on_ShaderButton_pressed():
@@ -224,3 +253,30 @@ func _on_DefaultColorsButton_pressed():
 	Global.ExplosionColor = Color(0.933, 0.0, 0.0)
 	Global.GhostColor = Color(0.0, 0.882, 1.0)
 	SetColorSliderValues()
+
+func SetCustomDifficultySliderValues():
+	$CustomDifficulty/LevelSizeSlider.value = Global.LevelSize
+	$CustomDifficulty/GhostAmountSlider.value = Global.GhostCount
+	$CustomDifficulty/SpeedSlider.value = Global.Speed
+
+func _on_LevelSizeSlider_value_changed(value):
+	Global.LevelSize = value
+	$CustomDifficulty/LevelSizeSlider/Number.text = str(value)
+
+func _on_GhostAmountSlider_value_changed(value):
+	Global.GhostCount = value
+	$CustomDifficulty/GhostAmountSlider/Number.text = str(Global.GhostCount)
+
+func _on_SpeedSlider_value_changed(value):
+	Global.Speed = value
+	$CustomDifficulty/SpeedSlider/Number.text = str(Global.Speed)
+
+func _on_CustomDifficultyBack_pressed():
+	$ButtonPressed.play()
+	$LevelSelect.visible = true
+	$CustomDifficulty.visible = false
+
+func _on_StartCustom_pressed():
+	$ButtonPressed.play()
+	Global.LevelMode = false
+	SceneChanger.ChangeScene("res://scenes/Main.tscn")

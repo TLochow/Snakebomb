@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=2]
@@ -13,13 +13,20 @@
 [ext_resource path="res://sounds/Button.wav" type="AudioStream" id=11]
 [ext_resource path="res://sprites/button inactive.png" type="Texture" id=12]
 [ext_resource path="res://sprites/hues.png" type="Texture" id=13]
+[ext_resource path="res://sprites/slider.png" type="Texture" id=14]
+[ext_resource path="res://sprites/slider highlight.png" type="Texture" id=15]
+[ext_resource path="res://sprites/slider grabber.png" type="Texture" id=16]
 
-[sub_resource type="DynamicFont" id=1]
-size = 20
+[sub_resource type="DynamicFont" id=20]
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -46,6 +53,36 @@ font_data = ExtResource( 2 )
 size = 8
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,7 +93,6 @@ __meta__ = {
 }
 
 [node name="Main" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -68,7 +104,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 20 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Snakebomb"
 align = 1
@@ -86,9 +122,9 @@ __meta__ = {
 }
 
 [node name="StartButton" type="TextureButton" parent="Main/Buttons"]
-margin_left = 8.0
+margin_left = 72.0
 margin_top = 64.0
-margin_right = 152.0
+margin_right = 216.0
 margin_bottom = 112.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -109,14 +145,17 @@ __meta__ = {
 }
 
 [node name="HowToButton" type="TextureButton" parent="Main/Buttons"]
-margin_left = 136.0
+margin_left = 72.0
 margin_top = 120.0
-margin_right = 280.0
+margin_right = 216.0
 margin_bottom = 168.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 5 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Main/Buttons/HowToButton"]
 anchor_right = 1.0
@@ -132,9 +171,9 @@ __meta__ = {
 }
 
 [node name="SettingsButton" type="TextureButton" parent="Main/Buttons"]
-margin_left = 8.0
+margin_left = 72.0
 margin_top = 176.0
-margin_right = 152.0
+margin_right = 216.0
 margin_bottom = 224.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -155,9 +194,9 @@ __meta__ = {
 }
 
 [node name="ExitButton" type="TextureButton" parent="Main/Buttons"]
-margin_left = 136.0
+margin_left = 72.0
 margin_top = 232.0
-margin_right = 280.0
+margin_right = 216.0
 margin_bottom = 280.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -806,6 +845,7 @@ __meta__ = {
 }
 
 [node name="Settings" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -813,7 +853,6 @@ __meta__ = {
 }
 
 [node name="Main" type="Control" parent="Settings"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -966,6 +1005,7 @@ __meta__ = {
 }
 
 [node name="Colors" type="Control" parent="Settings"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -1020,6 +1060,10 @@ margin_left = 112.0
 margin_top = 8.0
 margin_right = 272.0
 margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 15 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1059,6 +1103,10 @@ margin_left = 112.0
 margin_top = 8.0
 margin_right = 272.0
 margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 11 )
+custom_styles/grabber_area = SubResource( 16 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1130,6 +1178,10 @@ margin_left = 112.0
 margin_top = 8.0
 margin_right = 272.0
 margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 12 )
+custom_styles/grabber_area = SubResource( 17 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1173,6 +1225,10 @@ margin_left = 112.0
 margin_top = 8.0
 margin_right = 272.0
 margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 13 )
+custom_styles/grabber_area = SubResource( 18 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1218,6 +1274,10 @@ margin_left = 112.0
 margin_top = 8.0
 margin_right = 272.0
 margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 14 )
+custom_styles/grabber_area = SubResource( 19 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false

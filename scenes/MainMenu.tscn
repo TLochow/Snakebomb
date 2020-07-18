@@ -33,67 +33,67 @@ font_data = ExtResource( 2 )
 size = 10
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 160, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="DynamicFont" id=20]
-size = 8
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=21]
-size = 8
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=22]
-size = 14
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 6
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 8
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="DynamicFont" id=7]
 size = 8
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 14
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=9]
 size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="DynamicFont" id=9]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 6
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 160, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id=16]
 
-[sub_resource type="StyleBoxTexture" id=14]
+[sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 160, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=15]
+[sub_resource type="StyleBoxEmpty" id=18]
 
-[sub_resource type="StyleBoxTexture" id=16]
+[sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 160, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id=20]
 
-[sub_resource type="StyleBoxTexture" id=18]
+[sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 160, 16 )
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id=22]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -612,8 +612,8 @@ margin_right = 256.0
 margin_bottom = 112.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 10 )
-custom_styles/grabber_area = SubResource( 11 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
 min_value = 1.0
 max_value = 10.0
 value = 1.0
@@ -628,7 +628,7 @@ margin_left = -88.0
 margin_top = 4.0
 margin_right = -160.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level Size:"
 align = 1
@@ -644,7 +644,7 @@ margin_left = 160.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "1"
 align = 1
@@ -660,8 +660,8 @@ margin_right = 256.0
 margin_bottom = 160.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 10 )
-custom_styles/grabber_area = SubResource( 11 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
 min_value = 1.0
 max_value = 10.0
 value = 1.0
@@ -676,7 +676,7 @@ margin_left = -92.0
 margin_top = 4.0
 margin_right = -156.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Ghosts:"
 align = 1
@@ -692,7 +692,7 @@ margin_left = 160.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "1"
 align = 1
@@ -708,8 +708,8 @@ margin_right = 256.0
 margin_bottom = 136.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 10 )
-custom_styles/grabber_area = SubResource( 11 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
 min_value = 1.0
 max_value = 10.0
 value = 1.0
@@ -724,7 +724,7 @@ margin_left = -92.0
 margin_top = 4.0
 margin_right = -156.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Speed:"
 align = 1
@@ -740,7 +740,7 @@ margin_left = 160.0
 margin_top = 4.0
 margin_right = 24.0
 margin_bottom = -3.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "1"
 align = 1
@@ -754,7 +754,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 168.0
 margin_bottom = -96.0
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Warning! Many Ghosts in small
 levels can lead to spawning issues."
@@ -787,7 +787,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CustomDifficulty/Buttons/StartCustom"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Start"
 align = 1
@@ -850,7 +850,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
 margin_bottom = -56.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Use the Arrow keys, WASD, ZQSD or IJKL
 to change direction
@@ -1166,7 +1166,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/MuteButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Mute
 Sound"
@@ -1193,7 +1193,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/GlowButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Toggle Glow
 Shader"
@@ -1220,7 +1220,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/ShaderButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Toggle Retro
 Shader"
@@ -1247,7 +1247,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/ColorsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Configure
 Colors"
@@ -1274,7 +1274,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Main/SettingsBackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 align = 1
@@ -1296,7 +1296,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -213.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Color Configuration"
 align = 1
@@ -1320,7 +1320,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 104.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level Color:"
 align = 1
@@ -1342,8 +1342,8 @@ margin_right = 272.0
 margin_bottom = 24.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 10 )
-custom_styles/grabber_area = SubResource( 11 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1363,7 +1363,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 104.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Snake Color:"
 align = 1
@@ -1385,8 +1385,8 @@ margin_right = 272.0
 margin_bottom = 24.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 12 )
-custom_styles/grabber_area = SubResource( 13 )
+custom_styles/slider = SubResource( 15 )
+custom_styles/grabber_area = SubResource( 16 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1438,7 +1438,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 104.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Cherry Color:"
 align = 1
@@ -1460,8 +1460,8 @@ margin_right = 272.0
 margin_bottom = 24.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 14 )
-custom_styles/grabber_area = SubResource( 15 )
+custom_styles/slider = SubResource( 17 )
+custom_styles/grabber_area = SubResource( 18 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1485,7 +1485,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 104.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Ghost Color:"
 align = 1
@@ -1507,8 +1507,8 @@ margin_right = 272.0
 margin_bottom = 24.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 16 )
-custom_styles/grabber_area = SubResource( 17 )
+custom_styles/slider = SubResource( 19 )
+custom_styles/grabber_area = SubResource( 20 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1533,7 +1533,7 @@ __meta__ = {
 margin_left = 8.0
 margin_right = 104.0
 margin_bottom = 21.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Explosion
 Color:"
@@ -1556,8 +1556,8 @@ margin_right = 272.0
 margin_bottom = 24.0
 custom_icons/grabber_highlight = ExtResource( 15 )
 custom_icons/grabber = ExtResource( 16 )
-custom_styles/slider = SubResource( 18 )
-custom_styles/grabber_area = SubResource( 19 )
+custom_styles/slider = SubResource( 21 )
+custom_styles/grabber_area = SubResource( 22 )
 max_value = 255.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1585,7 +1585,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Colors/ColorBackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 align = 1
@@ -1611,7 +1611,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Settings/Colors/DefaultColorsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Defaults"
 align = 1

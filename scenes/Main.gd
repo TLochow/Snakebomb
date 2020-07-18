@@ -14,6 +14,7 @@ var Won = false
 var SpawnableArea = Vector2(272, 272)
 
 var ScreenShakeWait = 0.0
+var CameraZoom = 1.0
 
 func _ready():
 	if Global.LevelMode and Global.Level > Global.LevelsUnlocked:
@@ -32,9 +33,9 @@ func _ready():
 	$Cherry/Sprite.modulate = Global.CherryColor
 	
 	var levelSize = 12 + (Global.LevelSize * 2)
-	var cameraZoom = range_lerp(levelSize, 14.0, 34.0, 0.4375, 1.0)
-	$Camera2D.zoom *= cameraZoom
-	SpawnableArea *= cameraZoom
+	CameraZoom = range_lerp(levelSize, 14.0, 34.0, 0.4375, 1.0)
+	$Camera2D.zoom *= CameraZoom
+	SpawnableArea *= CameraZoom
 	var mapBlockMin = levelSize - 1
 	for x in range(36):
 		for y in range(36):
@@ -54,7 +55,7 @@ func _process(delta):
 		ScreenShakeWait -= delta
 		if ScreenShakeWait < 0.0:
 			ScreenShakeWait = 0.05
-			$Camera2D.offset = Vector2(rand_range(-Global.ScreenShake, Global.ScreenShake), rand_range(-Global.ScreenShake, Global.ScreenShake))
+			$Camera2D.offset = Vector2(rand_range(-Global.ScreenShake, Global.ScreenShake), rand_range(-Global.ScreenShake, Global.ScreenShake)) * CameraZoom 
 		Global.ScreenShake = max(Global.ScreenShake - delta * 5.0, 0.0)
 		if Explosions.get_child_count() == 0:
 			if not LevelEnd:
@@ -178,7 +179,7 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	$MoveTimer.wait_time = 1.0 / ((Global.Speed / 2.0) + 5.0)
+	$MoveTimer.wait_time = 1.0 / (Global.Speed)
 	$MoveTimer.connect("timeout", $Snake, "Update")
 	var ghosts = $Ghosts.get_children()
 	for ghost in ghosts:

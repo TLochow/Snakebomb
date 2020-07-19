@@ -90,8 +90,8 @@ func GenerateMap():
 			var pos = GetRandomCoords()
 			if pos.x > 64 and pos.y > 64 and pos.x < 224 and pos.y < 224:
 				valid = true
-				var blockSizeX = ((randi() % int(Global.LevelSize)) + 1)
-				var blockSizeY = ((randi() % int(Global.LevelSize)) + 1)
+				var blockSizeX = ((randi() % int(ceil(Global.LevelSize / 2.0))) + 1)
+				var blockSizeY = ((randi() % int(ceil(Global.LevelSize / 2.0))) + 1)
 				var coord = Map.world_to_map(pos)
 				var minX = coord.x - blockSizeX
 				var maxX = coord.x + blockSizeX
@@ -179,7 +179,7 @@ func _on_Snake_AteCherry():
 
 func _on_FadeInAnimationPlayer_animation_finished(anim_name):
 	$UI/Begin.visible = false
-	$MoveTimer.wait_time = 1.0 / (Global.Speed)
+	$MoveTimer.wait_time = range_lerp(Global.Speed, 1.0, 10.0, 0.5, 0.1)
 	$MoveTimer.connect("timeout", $Snake, "Update")
 	var ghosts = $Ghosts.get_children()
 	for ghost in ghosts:

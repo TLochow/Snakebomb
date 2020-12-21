@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://AndroidInterface.gd" type="Script" id=1]
+[ext_resource path="res://scenes/MainMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/button pressed..png" type="Texture" id=3]
+[ext_resource path="res://sprites/button normal.png" type="Texture" id=4]
+[ext_resource path="res://sprites/arrow.png" type="Texture" id=5]
+[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://sprites/button inactive.png" type="Texture" id=7]
+[ext_resource path="res://sprites/button hover.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 6 )
+
+[node name="AndroidInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 288.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="Viewport" parent="ViewportContainer" groups=[
+"GameViewPort",
+]]
+size = Vector2( 288, 288 )
+render_target_update_mode = 3
+
+[node name="MainMenu" parent="ViewportContainer/Game" instance=ExtResource( 2 )]
+
+[node name="Controls" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -144.0
+margin_top = -288.0
+margin_right = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpButton" type="TouchScreenButton" parent="Controls"]
+position = Vector2( 96, 8 )
+scale = Vector2( 1, 3 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Controls/UpButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.4938
+margin_top = 24.0
+margin_right = -55.5062
+margin_bottom = 8.0
+rect_rotation = -90.0
+rect_scale = Vector2( 1, 3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DownButton" type="TouchScreenButton" parent="Controls"]
+position = Vector2( 96, 104 )
+scale = Vector2( 1, 3 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Controls/DownButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 73.0352
+margin_top = 8.0
+margin_right = -6.96481
+margin_bottom = -8.0
+rect_rotation = 90.0
+rect_scale = Vector2( 1, 3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftButton" type="TouchScreenButton" parent="Controls"]
+position = Vector2( 0, 56 )
+scale = Vector2( 1, 3 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Controls/LeftButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 72.0
+margin_top = 24.0
+margin_right = -8.0
+margin_bottom = 8.0
+rect_rotation = 180.0
+rect_scale = Vector2( 3, 1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightButton" type="TouchScreenButton" parent="Controls"]
+position = Vector2( 192, 56 )
+scale = Vector2( 1, 3 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Controls/RightButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 8.00001
+margin_right = -56.0
+margin_bottom = -7.99999
+rect_scale = Vector2( 3, 1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="TextureButton" parent="Controls"]
+margin_left = 8.0
+margin_top = 248.0
+margin_right = 104.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Controls/MenuButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "Main Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="Controls/UpButton" to="." method="_on_UpButton_pressed"]
+[connection signal="pressed" from="Controls/DownButton" to="." method="_on_DownButton_pressed"]
+[connection signal="pressed" from="Controls/LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="Controls/RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="pressed" from="Controls/MenuButton" to="." method="_on_MenuButton_pressed"]

@@ -1,0 +1,1660 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://ARCADE_N.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/button pressed..png" type="Texture" id=3]
+[ext_resource path="res://sprites/button normal.png" type="Texture" id=4]
+[ext_resource path="res://sprites/button hover.png" type="Texture" id=5]
+[ext_resource path="res://sprites/snake.png" type="Texture" id=6]
+[ext_resource path="res://sprites/cherry.png" type="Texture" id=7]
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/ghost.png" type="Texture" id=9]
+[ext_resource path="res://sprites/explosion.png" type="Texture" id=10]
+[ext_resource path="res://sounds/Button.wav" type="AudioStream" id=11]
+[ext_resource path="res://sprites/button inactive.png" type="Texture" id=12]
+[ext_resource path="res://sprites/hues.png" type="Texture" id=13]
+[ext_resource path="res://sprites/slider.png" type="Texture" id=14]
+[ext_resource path="res://sprites/slider highlight.png" type="Texture" id=15]
+[ext_resource path="res://sprites/slider grabber.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 6
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 160, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Snakebomb"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButton" type="TextureButton" parent="Main/Buttons"]
+margin_left = 72.0
+margin_top = 64.0
+margin_right = 216.0
+margin_bottom = 112.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="Main/Buttons/StartButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HowToButton" type="TextureButton" parent="Main/Buttons"]
+margin_left = 72.0
+margin_top = 120.0
+margin_right = 216.0
+margin_bottom = 168.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Main/Buttons/HowToButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "How to play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="TextureButton" parent="Main/Buttons"]
+margin_left = 72.0
+margin_top = 176.0
+margin_right = 216.0
+margin_bottom = 224.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="Main/Buttons/SettingsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="Main/Buttons"]
+margin_left = 72.0
+margin_top = 232.0
+margin_right = 216.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Main/Buttons/ExitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelect" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Select Level"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="LevelSelect"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 136.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 8.0
+margin_top = 104.0
+margin_right = 136.0
+margin_bottom = 136.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 8.0
+margin_top = 144.0
+margin_right = 136.0
+margin_bottom = 176.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 8.0
+margin_top = 184.0
+margin_right = 136.0
+margin_bottom = 216.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 8.0
+margin_top = 224.0
+margin_right = 136.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 152.0
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 152.0
+margin_top = 104.0
+margin_right = 280.0
+margin_bottom = 136.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 7"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level8" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 152.0
+margin_top = 144.0
+margin_right = 280.0
+margin_bottom = 176.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 8"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level9" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 152.0
+margin_top = 184.0
+margin_right = 280.0
+margin_bottom = 216.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 9"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level10" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 152.0
+margin_top = 224.0
+margin_right = 280.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Level10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 92.0
+margin_top = 260.0
+margin_right = 196.0
+margin_bottom = 284.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Custom" type="TextureButton" parent="LevelSelect/Buttons"]
+margin_left = 200.0
+margin_top = 260.0
+margin_right = 280.0
+margin_bottom = 284.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSelect/Buttons/Custom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Custom"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CustomDifficulty" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Custom
+Difficulty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSizeSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 256.0
+margin_bottom = 112.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/LevelSizeSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = 4.0
+margin_right = -160.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level Size:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/LevelSizeSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GhostAmountSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 144.0
+margin_right = 256.0
+margin_bottom = 160.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/GhostAmountSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = 4.0
+margin_right = -156.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ghosts:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/GhostAmountSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedSlider" type="HSlider" parent="CustomDifficulty"]
+margin_left = 96.0
+margin_top = 120.0
+margin_right = 256.0
+margin_bottom = 136.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CustomDifficulty/SpeedSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = 4.0
+margin_right = -156.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Speed:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="CustomDifficulty/SpeedSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 160.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CustomDifficulty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 168.0
+margin_bottom = -96.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Warning! Many Ghosts in small
+levels can lead to spawning issues."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="CustomDifficulty"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartCustom" type="TextureButton" parent="CustomDifficulty/Buttons"]
+margin_left = 84.0
+margin_top = 208.0
+margin_right = 204.0
+margin_bottom = 248.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty/Buttons/StartCustom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CustomDifficultyBack2" type="TextureButton" parent="CustomDifficulty/Buttons"]
+margin_left = 92.0
+margin_top = 256.0
+margin_right = 196.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CustomDifficulty/Buttons/CustomDifficultyBack2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HowTo" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HowTo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "How to Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="HowTo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+margin_bottom = -56.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Use the Arrow keys, WASD, ZQSD or IJKL
+to change direction
+
+Collect cherry-bombs to grow larger.
+
+
+Run into a wall, a ghost or yourself
+to explode in a chain reaction.
+
+
+
+Destroy all ghosts with your explosion
+to get to the next level.
+An Explosion covers an area of 5x5 cells."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprites" type="Control" parent="HowTo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 236, 100 )
+texture = ExtResource( 7 )
+
+[node name="Sprite10" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.882353, 1, 1 )
+position = Vector2( 128, 152 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Sprite24" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.882353, 1, 1 )
+position = Vector2( 136, 200 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Sprite25" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.882353, 1, 1 )
+position = Vector2( 120, 208 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Sprite26" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.882353, 1, 1 )
+position = Vector2( 152, 192 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Sprite27" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.882353, 1, 1 )
+position = Vector2( 144, 216 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Sprite2" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 228, 100 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 1
+
+[node name="Sprite3" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 220, 100 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite4" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 212, 100 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite5" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 204, 100 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 16
+
+[node name="Sprite9" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 100, 148 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 18
+
+[node name="Sprite8" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 92, 148 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite7" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 84, 148 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite6" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 76, 148 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 4
+
+[node name="Sprite14" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 160, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 18
+
+[node name="Sprite13" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 152, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite12" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 144, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite11" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 136, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 4
+
+[node name="Sprite18" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 232, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 10
+
+[node name="Sprite19" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 232, 144 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 9
+
+[node name="Sprite20" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 232, 136 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 13
+
+[node name="Sprite21" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 224, 136 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite22" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 216, 136 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 12
+
+[node name="Sprite23" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 216, 144 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 3
+
+[node name="Sprite17" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 224, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite16" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 216, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite15" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 208, 152 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 16
+
+[node name="Sprite29" type="Sprite" parent="HowTo/Sprites"]
+modulate = Color( 0.933333, 0, 0, 1 )
+position = Vector2( 112, 208 )
+texture = ExtResource( 10 )
+hframes = 6
+frame = 2
+
+[node name="TileMap" parent="HowTo/Sprites" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 1114119, 0, 0, 1114120, 0, 2, 1179654, 0, 0, 1179655, 0, 65540, 1179656, 0, 65538, 1245190, 0, 131072, 1245191, 0, 131073, 1245192, 0, 131074 )
+
+[node name="BackButton" type="TextureButton" parent="HowTo"]
+margin_left = 72.0
+margin_top = 232.0
+margin_right = 216.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HowTo/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Control" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Settings/Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MuteButton" type="TextureButton" parent="Settings/Main"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 136.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Main/MuteButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mute
+Sound"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GlowButton" type="TextureButton" parent="Settings/Main"]
+margin_left = 16.0
+margin_top = 112.0
+margin_right = 136.0
+margin_bottom = 152.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Main/GlowButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Toggle Glow
+Shader"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ShaderButton" type="TextureButton" parent="Settings/Main"]
+margin_left = 152.0
+margin_top = 112.0
+margin_right = 272.0
+margin_bottom = 152.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Main/ShaderButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Toggle Retro
+Shader"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorsButton" type="TextureButton" parent="Settings/Main"]
+margin_left = 16.0
+margin_top = 160.0
+margin_right = 136.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Main/ColorsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Configure
+Colors"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBackButton" type="TextureButton" parent="Settings/Main"]
+margin_left = 16.0
+margin_top = 208.0
+margin_right = 136.0
+margin_bottom = 248.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Main/SettingsBackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="Control" parent="Settings"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -213.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Color Configuration"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 64.0
+margin_bottom = -192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Level"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Level"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="LevelColorSlider" type="HSlider" parent="Settings/Colors/Level"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Snake" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 96.0
+margin_bottom = -160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Snake"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Snake Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Snake"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="SnakeColorSlider" type="HSlider" parent="Settings/Colors/Snake"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 15 )
+custom_styles/grabber_area = SubResource( 16 )
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 204, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 1
+
+[node name="Sprite2" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 196, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite3" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 188, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 8
+
+[node name="Sprite4" type="Sprite" parent="Settings/Colors/Snake"]
+modulate = Color( 0, 0.666667, 0.0431373, 1 )
+position = Vector2( 180, 28 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 8
+frame = 16
+
+[node name="Cherry" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 128.0
+margin_bottom = -128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Cherry"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cherry Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Cherry"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="CherryColorSlider" type="HSlider" parent="Settings/Colors/Cherry"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 17 )
+custom_styles/grabber_area = SubResource( 18 )
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Cherry"]
+position = Vector2( 204, 28 )
+texture = ExtResource( 7 )
+
+[node name="Ghost" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 160.0
+margin_bottom = -96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Ghost"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ghost Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Ghost"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="GhostColorSlider" type="HSlider" parent="Settings/Colors/Ghost"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 19 )
+custom_styles/grabber_area = SubResource( 20 )
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Ghost"]
+position = Vector2( 160, 28 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 2
+
+[node name="Explosion" type="Control" parent="Settings/Colors"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 192.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/Explosion"]
+margin_left = 8.0
+margin_right = 104.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Explosion
+Color:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Settings/Colors/Explosion"]
+position = Vector2( 192, 8 )
+scale = Vector2( 0.476489, 0.5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="ExplosionColorSlider" type="HSlider" parent="Settings/Colors/Explosion"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 24.0
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 16 )
+custom_styles/slider = SubResource( 21 )
+custom_styles/grabber_area = SubResource( 22 )
+max_value = 255.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite1" type="Sprite" parent="Settings/Colors/Explosion"]
+position = Vector2( 248, 32 )
+texture = ExtResource( 10 )
+hframes = 6
+frame = 2
+
+[node name="ColorBackButton" type="TextureButton" parent="Settings/Colors"]
+margin_left = 56.0
+margin_top = 240.0
+margin_right = 168.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/ColorBackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="DefaultColorsButton" type="TextureButton" parent="Settings/Colors"]
+margin_left = 192.0
+margin_top = 240.0
+margin_right = 272.0
+margin_bottom = 280.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Settings/Colors/DefaultColorsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Defaults"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+[connection signal="pressed" from="Main/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Main/Buttons/HowToButton" to="." method="_on_HowToButton_pressed"]
+[connection signal="pressed" from="Main/Buttons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Main/Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level4" to="." method="_on_Level4_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level5" to="." method="_on_Level5_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level6" to="." method="_on_Level6_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level7" to="." method="_on_Level7_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level8" to="." method="_on_Level8_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level9" to="." method="_on_Level9_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Level10" to="." method="_on_Level10_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="LevelSelect/Buttons/Custom" to="." method="_on_Custom_pressed"]
+[connection signal="value_changed" from="CustomDifficulty/LevelSizeSlider" to="." method="_on_LevelSizeSlider_value_changed"]
+[connection signal="value_changed" from="CustomDifficulty/GhostAmountSlider" to="." method="_on_GhostAmountSlider_value_changed"]
+[connection signal="value_changed" from="CustomDifficulty/SpeedSlider" to="." method="_on_SpeedSlider_value_changed"]
+[connection signal="pressed" from="CustomDifficulty/Buttons/StartCustom" to="." method="_on_StartCustom_pressed"]
+[connection signal="pressed" from="CustomDifficulty/Buttons/CustomDifficultyBack2" to="." method="_on_CustomDifficultyBack_pressed"]
+[connection signal="pressed" from="HowTo/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Settings/Main/MuteButton" to="." method="_on_MuteButton_pressed"]
+[connection signal="pressed" from="Settings/Main/GlowButton" to="." method="_on_GlowButton_pressed"]
+[connection signal="pressed" from="Settings/Main/ShaderButton" to="." method="_on_ShaderButton_pressed"]
+[connection signal="pressed" from="Settings/Main/ColorsButton" to="." method="_on_ColorsButton_pressed"]
+[connection signal="pressed" from="Settings/Main/SettingsBackButton" to="." method="_on_SettingsBackButton_pressed"]
+[connection signal="value_changed" from="Settings/Colors/Level/LevelColorSlider" to="." method="_on_LevelColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Snake/SnakeColorSlider" to="." method="_on_SnakeColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Cherry/CherryColorSlider" to="." method="_on_CherryColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Ghost/GhostColorSlider" to="." method="_on_GhostColorSlider_value_changed"]
+[connection signal="value_changed" from="Settings/Colors/Explosion/ExplosionColorSlider" to="." method="_on_ExplosionColorSlider_value_changed"]
+[connection signal="pressed" from="Settings/Colors/ColorBackButton" to="." method="_on_ColorBackButton_pressed"]
+[connection signal="pressed" from="Settings/Colors/DefaultColorsButton" to="." method="_on_DefaultColorsButton_pressed"]
